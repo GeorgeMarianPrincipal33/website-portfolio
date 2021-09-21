@@ -7,5 +7,6 @@ namespace Webportfolio.Models
 {
     public class CV
     {
+        public int Id { get; set; }
     }
 }
