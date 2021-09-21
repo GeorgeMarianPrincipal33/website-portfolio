@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Webportfolio.Services;
 
 namespace Webportfolio
 {
@@ -25,6 +26,7 @@ namespace Webportfolio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICVService, CVService>();
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));
         }
