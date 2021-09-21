@@ -8,5 +8,15 @@ namespace Webportfolio.Models
     public class CV
     {
         public int Id { get; set; }
+
+        public string Description { get; set; }
+
+        public string ContactDetails { get; set; }
+        
+        public string Certificaitons { get; set; }
+
+        public string PlacesOfWork { get; set; }
+
+        public string Skills { get; set; }
     }
 }
