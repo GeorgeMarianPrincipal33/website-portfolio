@@ -22,5 +22,11 @@ namespace Webportfolio.Controllers
         {
             return cvService.GetCVs();
         }
+        
+        [HttpGet]
+        public CV GetCV(int id)
+        {
+            return cvService.GetCv(id);
+        }
     }
 }

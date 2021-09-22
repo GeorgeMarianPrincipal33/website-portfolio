@@ -16,6 +16,13 @@ namespace Webportfolio.Services
         {
             this.dbContext = dbContext;
         }
+
+        public CV GetCv(int id)
+        {
+
+             return dbContext.CVs.FirstOrDefault(e => e.Id == id);
+        }
+
         public IEnumerable<CV> GetCVs()
         {
             return dbContext.CVs.ToArray();

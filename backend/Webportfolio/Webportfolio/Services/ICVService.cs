@@ -10,5 +10,7 @@ namespace Webportfolio.Services
     {
         IEnumerable<CV> GetCVs();
 
+        CV GetCv(int id);
+
     }
 }
