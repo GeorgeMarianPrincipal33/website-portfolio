@@ -31,9 +31,6 @@ namespace Webportfolio
             services.AddScoped<ICVService, CVService>();
             services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));
 
-            //services.AddDefaultIdentity<ApplicationUser>()
-            //        .AddEntityFrameworkStores<ApplicationDbContext>();
-
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
             EnsureUsersCreated(services).Wait();
         }
@@ -75,9 +72,6 @@ namespace Webportfolio
             var user2 = await EnsureUserCreated(userManager, "dragos.duma@principal33.com", "Parola2@");
             var user3 = await EnsureUserCreated(userManager, "leon.campean@principal33.com", "Parola3@");
             var user4 = await EnsureUserCreated(userManager, "catalin.briscan@principal33.com", "Parola4@");
-
-            //var users = await userManager.Users.ToListAsync();
-            //Console.WriteLine($"There are {users.Count} users now.");
         }
 
         private static async Task<IdentityUser> EnsureUserCreated(UserManager<IdentityUser> userManager, string name, string password)
