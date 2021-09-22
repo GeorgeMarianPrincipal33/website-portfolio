@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
+    branches: [ feature/#3_deploy-automatically ]
   pull_request:
     branches: [ main ]
 
