@@ -34,6 +34,7 @@ namespace Webportfolio
             //services.AddDefaultIdentity<ApplicationUser>()
             //        .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
             EnsureUsersCreated(services).Wait();
         }
 
@@ -56,6 +57,7 @@ namespace Webportfolio
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
