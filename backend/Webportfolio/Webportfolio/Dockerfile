@@ -5,9 +5,9 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["Webportfolio/Webportfolio.csproj", "Webportfolio/"]
+COPY ["./Webportfolio.csproj", "Webportfolio/"]
 RUN dotnet restore "Webportfolio/Webportfolio.csproj"
-COPY . .
+COPY . ./Webportfolio
 WORKDIR "/src/Webportfolio"
 RUN dotnet build "Webportfolio.csproj" -c Release -o /app/build
 
