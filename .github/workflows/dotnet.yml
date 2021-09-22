@@ -30,6 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build, Push and Release a Docker container to Heroku.
+      working-directory: backend/Webportfolio/Webportfolio
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_email: ${{ secrets.HEROKU_EMAIL }}
