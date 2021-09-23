@@ -31,13 +31,17 @@ namespace Webportfolio.Services
         public void UpdateCv(CV cv)
         {
             var entity = dbContext.CVs.FirstOrDefault(e => e.Id == cv.Id);
-            if(entity!=null)
+            if(entity != null)
             {
                 entity.Certifications = cv.Certifications;
                 entity.ContactDetails = cv.ContactDetails;
                 entity.Description = cv.Description;
                 entity.PlacesOfWork = cv.PlacesOfWork;
                 entity.Skills = cv.Skills;
+                entity.ProfilePicture = cv.ProfilePicture;
+
+                dbContext.CVs.Update(entity);
+                dbContext.SaveChanges();
             }
         }
     }
