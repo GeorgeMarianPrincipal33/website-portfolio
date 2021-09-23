@@ -8,7 +8,7 @@
     <input class="inputs" type="text" placeholder="password">
 </div>
 <div class="button-div">
-    <button class="buttons"><span>{{Login}}</span></button>
+  <router-link to="/Home"><button class="buttons"><span>{{Login}}</span></button></router-link>
 </div>
 <div class="link-div">
     <a class="link" href="">{{Forgot}}</a>
