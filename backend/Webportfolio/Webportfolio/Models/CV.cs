@@ -13,7 +13,7 @@ namespace Webportfolio.Models
 
         public string ContactDetails { get; set; }
 
-        public string Certificaitons { get; set; }
+        public string Certifications { get; set; }
 
         public string PlacesOfWork { get; set; }
 

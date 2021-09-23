@@ -12,5 +12,7 @@ namespace Webportfolio.Services
 
         CV GetCv(int id);
 
+        void UpdateCv(CV cv);
+
     }
 }

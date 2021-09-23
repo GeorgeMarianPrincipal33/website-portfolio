@@ -28,5 +28,11 @@ namespace Webportfolio.Controllers
         {
             return cvService.GetCv(id);
         }
+
+        [HttpPut]
+        public void UpdateCV(CV cv)
+        {
+            cvService.UpdateCv(cv);
+        }
     }
 }
