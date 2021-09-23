@@ -30,7 +30,7 @@ namespace Webportfolio.Controllers
         }
 
         [HttpPut]
-        public void UpdateCV(CV cv)
+        public void UpdateCV([FromBody]CV cv)
         {
             cvService.UpdateCv(cv);
         }
