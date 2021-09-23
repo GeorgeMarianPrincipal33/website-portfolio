@@ -18,5 +18,7 @@ namespace Webportfolio.Models
         public string PlacesOfWork { get; set; }
 
         public string Skills { get; set; }
+
+        public string ProfilePicture { get; set; }
     }
 }
