@@ -5,7 +5,7 @@
     <input class="inputs" type="text" placeholder="username" v-model="Username">
 </div>
 <div class="input-div">
-    <input class="inputs" type="text" placeholder="password" v-model="Password">
+    <input type="password" class="inputs" placeholder="password" v-model="Password">
 </div>
 <div class="button-div">
   <router-link to="/Home" >

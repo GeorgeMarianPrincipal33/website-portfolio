@@ -2,9 +2,7 @@
     <section>
         <div class="footer">
             <ul class="footer-ul">
-                <p>I’m available for freelance </p>
-                <br>
-                <p class="p-a">work, you can reach me by  </p>
+                <pre>{{footerTitle}}</pre>
                 <li style="float:left"><a class="footer-a" href="#contact">Facebook</a></li> 
                 <li style="float:left"><a class="footer-a" href="#contact">#Instagram</a></li> 
                 <li style="float:left"><a class="footer-a" href="#news">Email</a></li>
@@ -24,17 +22,17 @@
 export default {
     data() {
         return {
+            footerTitle: "I’m available for freelance  work, \n you can reach me by "
         }
-    }
+    },
 }
 </script>
 
 <style>
-p {
+pre {
     margin-right: 0;
     font-size: 50px;
     font-family: "Roboto Mono", Sans-serif;
-    position: fixed;
     bottom: 9rem;
     left: 7rem;
     color: black;
@@ -44,7 +42,6 @@ p {
     margin-right: 0;
     font-size: 50px;
     font-family: "Roboto Mono", Sans-serif;
-    position: fixed;
     bottom: 6.5rem;
     left: 7rem;
     color: black;
@@ -52,11 +49,10 @@ p {
 
 .footer {
     flex-direction: row;
-    position: fixed;
     width: 100%;
-    padding: 100;
-    bottom: 0;
     left: 0;
+    hyphens: manual;
+    margin-top: 2rem;
 }
 
 .footer-ul {

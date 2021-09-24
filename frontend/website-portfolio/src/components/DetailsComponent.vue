@@ -1,17 +1,25 @@
 <template>
     <section>
+      <div>
         <pre class="details-title">{{ employee.title }}</pre>
+        <img class="profile-photo" src="../assets/logo.png" name="file_name">
+      </div>
+      <div>
         <pre class="details-h2">{{ employee.details }}</pre>
+      </div>
         <div>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>GitHub</p>
-            <p>Behance</p>
+          <ul class="details-ul">
+            <li class="details-li"><a>Facebook</a></li>
+            <li class="details-li"><a>#Instagram</a></li>
+            <li class="details-li"><a>Github</a></li>
+            <li class="details-li"><a>Behance</a></li>
+          </ul>
         </div>
+        <div>
         <button type="submit" id="contact" class="buttons-home" @click="contactUs">
             <span>Contact us</span>
         </button>
-        <img class="profile-photo" src="../assets/logo.png" name="file_name">
+        </div>
     </section>
 </template>
 
@@ -30,7 +38,7 @@ export default {
     },
     methods: {
         contactUs() {
-            window.scrollTo(window.scrollX, window.scrollY + 200);            
+            window.scrollTo(window.scrollX, window.scrollY + 500);            
         },
     },
 
@@ -40,16 +48,21 @@ export default {
 
 <style>
 
+.details-ul {
+  flex-direction: row;
+  margin-left: 40%;
+}
+
+.details-li {
+  justify-content: space-between;
+}
+
 .profile-photo {
-    position: fixed;
-    right: 25%;
-    margin-top: 10rem;
 }
 
 
 .details-title {
     color: white;
-    position: fixed;
     left: 20%;
     font-size: 4rem;
 }
@@ -58,14 +71,13 @@ export default {
     color: white;
     left: 22%;
     font-size: 1rem;
-    position: fixed;
-    margin-top: 25rem;
+    margin-top: 5rem;
 }
 
 
 .buttons-home {
     height: 3rem;
-    width: 12rem;
+    width: 13rem;
     text-align: center;
     font-size: 20px;
     background-color: rgb(51, 255, 169);
@@ -78,8 +90,7 @@ export default {
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-shadow: 0 9px rgb(244, 244, 247);
     outline: none;
-    position: fixed;
-    margin-top: 30rem;
+    margin-top: 3rem;
     left: 27%;
     color: white;
 }
@@ -93,7 +104,6 @@ export default {
 }
 .buttons-home span:after {
   content: '\2193';
-  position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
@@ -123,9 +133,6 @@ export default {
     }
     .label {
       width: auto;
-    }
-    section {
-      width: 50%;
     }
   }
 
