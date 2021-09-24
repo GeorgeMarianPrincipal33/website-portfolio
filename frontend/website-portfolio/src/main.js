@@ -4,9 +4,6 @@ import App from './App.vue';
 import Home from './components/Home.vue';
 import Login from './components/Login.vue';
 
-
-
-
 const routes = [
      { path: '/home', component: Home },
      { path: '/', component:  Login },
