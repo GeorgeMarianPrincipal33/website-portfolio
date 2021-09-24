@@ -2,7 +2,11 @@
     <section>
         <div class="navbar">
             <ul>
-                <li><a href="#home">George</a></li>
+                <li><a href="#home" class="active">George</a></li>
+                <li><a href="#home" >Leon</a></li>
+                <li><a href="#home" >Catalin</a></li>
+                <li><a href="#home" >Dragos</a></li>
+
                 <router-link to="/">
                     <li style="float:right"><a href="#contact">Sign-Out</a></li> 
                 </router-link>
@@ -11,8 +15,6 @@
                 <li style="float:right"><a class="active" href="#home">Home</a></li>
             </ul>
          </div>
-
-
     </section>
 </template>
 
