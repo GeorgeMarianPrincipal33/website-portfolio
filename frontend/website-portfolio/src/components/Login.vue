@@ -2,13 +2,13 @@
 <section>
 <h1 class= "titlu">{{Titlu}}</h1>
 <div class="input-div-a">
-    <input class="inputs" type="text" placeholder="username">
+    <input class="inputs" type="text" placeholder="username" v-model="Username">
 </div>
 <div class="input-div">
-    <input class="inputs" type="text" placeholder="password">
+    <input class="inputs" type="text" placeholder="password" v-model="Password">
 </div>
 <div class="button-div">
-  <router-link to="/Home">
+  <router-link to="/Home" >
     <button class="buttons">
       <span>{{Login}}</span>
     </button>
@@ -22,14 +22,28 @@
 </template>
 
 <script>
+import {login } from '../scripts/connection.js';
     export default {
         data () {
             return {
                 Titlu: "Website-Portfolio",
                 Login: "Log in",
                 Register: "Register",
-                Forgot: "Forgot your password?"
+                Forgot: "Forgot your password?",
+                Username: "",
+                Password: ""
             }
+        },
+
+        beforeRouteLeave(to, from, next){
+          console.log(to, from, next)
+          login(this.Username, this.Password).then(result => {
+            const id = result.data
+
+            if(id !== ''){
+              next()
+            }
+          })
         }
     }
 
