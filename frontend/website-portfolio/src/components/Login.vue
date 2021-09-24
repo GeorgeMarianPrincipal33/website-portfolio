@@ -19,40 +19,75 @@
 </div>
 </section>
     
+  <section>
+    <h1 class="titlu">{{ Titlu }}</h1>
+    <div class="input-div-a">
+      <input
+        class="inputs"
+        type="text"
+        placeholder="username"
+        v-model="Username"
+      />
+    </div>
+    <div class="input-div">
+      <input
+        class="inputs"
+        type="password"
+        placeholder="password"
+        v-model="Password"
+      />
+    </div>
+    <div class="button-div">
+      <router-link to="/Home">
+        <button class="buttons">
+          <span>{{ Login }}</span>
+        </button>
+      </router-link>
+    </div>
+    <div class="link-div">
+      <a class="link" href="">{{ Forgot }}</a>
+    </div>
+  </section>
 </template>
 
 <script>
-import {login } from '../scripts/connection.js';
-    export default {
-        data () {
-            return {
-                Titlu: "Website-Portfolio",
-                Login: "Log in",
-                Register: "Register",
-                Forgot: "Forgot your password?",
-                Username: "",
-                Password: ""
-            }
-        },
+import { login } from "../scripts/connection.js";
 
-        beforeRouteLeave(to, from, next){
-          console.log(to, from, next)
-          login(this.Username, this.Password).then(result => {
-            const id = result.data
+export default {
+  data() {
+    return {
+      Titlu: "Website-Portfolio",
+      Login: "Log in",
+      Register: "Register",
+      Forgot: "Forgot your password?",
+      Username: "",
+      Password: "",
+    };
+  },
 
-            if(id !== ''){
-              next()
-            }
-          })
-        }
-    }
-
-
-
+  beforeRouteLeave(to, from, next) {
+    console.log(to, from, next);
+    login(this.Username, this.Password).then((result) => {
+      const id = result.data;
+      if (id !== "") {
+        next();
+      }
+      else if(!this.Username && !this.Password){
+        alert("Fields are empty.")
+      }
+       else if (!this.Username) {
+        alert("Username required.");
+      } else if (!this.Password) {
+        alert("Password required.");
+      } else {
+        alert("Credentials are wrong.");
+      }
+    });
+  },
+};
 </script>
 
-<style >
-
+<style>
 .titlu {
   display: flex;
   align-items: center;
@@ -63,21 +98,26 @@ import {login } from '../scripts/connection.js';
   height: 100px;
   background: white;
   border-radius: 150px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: lighter;
   letter-spacing: 2px;
   transition: 1s box-shadow;
-  background: linear-gradient(90deg, rgb(9, 80, 56) 0%, rgb(238, 238, 240) 100%);
-  color:black;
+  background: linear-gradient(
+    90deg,
+    rgb(9, 80, 56) 0%,
+    rgb(238, 238, 240) 100%
+  );
+  color: black;
   font-size: 25px;
 }
 
 .titlu:hover {
-  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
 }
-.titlu:hover::before, .titlu:hover::after {
+.titlu:hover::before,
+.titlu:hover::after {
   display: block;
-  content: '';
+  content: "";
   position: absolute;
   width: 250px;
   height: 100px;
@@ -87,7 +127,7 @@ import {login } from '../scripts/connection.js';
   animation: 1s clockwise infinite;
 }
 .titlu:hover:after {
-  background: rgb(51,255,169);
+  background: rgb(51, 255, 169);
   animation: 2s counterclockwise infinite;
 }
 @keyframes clockwise {
@@ -101,7 +141,7 @@ import {login } from '../scripts/connection.js';
   }
   25% {
     top: 0;
-    left: 5px;    
+    left: 5px;
   }
   37% {
     top: 2px;
@@ -109,7 +149,7 @@ import {login } from '../scripts/connection.js';
   }
   50% {
     top: 5px;
-    left: 0;    
+    left: 0;
   }
   62% {
     top: 2px;
@@ -125,7 +165,7 @@ import {login } from '../scripts/connection.js';
   }
   100% {
     top: -5px;
-    left: 0;    
+    left: 0;
   }
 }
 @keyframes counterclockwise {
@@ -139,7 +179,7 @@ import {login } from '../scripts/connection.js';
   }
   25% {
     top: 0;
-    right: 5px;    
+    right: 5px;
   }
   37% {
     top: 2px;
@@ -147,7 +187,7 @@ import {login } from '../scripts/connection.js';
   }
   50% {
     top: 5px;
-    right: 0;    
+    right: 0;
   }
   62% {
     top: 2px;
@@ -163,39 +203,36 @@ import {login } from '../scripts/connection.js';
   }
   100% {
     top: -5px;
-    right: 0;    
+    right: 0;
   }
 }
 
 .input-div-a {
-    margin-top: 10rem;
-}
-
-.input-div {
+  margin-top: 10rem;
 }
 
 .button-div {
-    margin-top: 4rem;    
+  margin-top: 4rem;
 }
 
 .buttons {
-    height: 3rem;
-    width: 10rem;
-    text-align: center;
-    font-size: 20px;
-    background-color: rgb(51, 255, 169);
-    color: black;
-    border-radius: 15px;
-    padding: 5px 32px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-shadow: 0 9px rgb(244, 244, 247);
-    outline: none;
-    color: white;
+  height: 3rem;
+  width: 10rem;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(51, 255, 169);
+  color: black;
+  border-radius: 15px;
+  padding: 5px 32px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-shadow: 0 9px rgb(244, 244, 247);
+  outline: none;
+  color: white;
 }
-
 
 .buttons span {
   cursor: pointer;
@@ -204,7 +241,7 @@ import {login } from '../scripts/connection.js';
   transition: 0.5s;
 }
 .buttons span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -213,7 +250,7 @@ import {login } from '../scripts/connection.js';
 }
 .buttons:hover span {
   padding-right: 25px;
-  color :rgb(35,39,45);
+  color: rgb(35, 39, 45);
 }
 .buttons:hover span:after {
   opacity: 1;
@@ -226,28 +263,27 @@ import {login } from '../scripts/connection.js';
 }
 
 .inputs {
-    width: 30%;
-    height: 4rem;
-    text-align: center;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 15px;
-    font-size:large;
+  width: 30%;
+  height: 4rem;
+  text-align: center;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-size: large;
 }
 
 .link {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 .link:hover {
-    color:rgb(51, 255, 169)
+  color: rgb(51, 255, 169);
 }
 
 .link-div {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
-
 </style>
