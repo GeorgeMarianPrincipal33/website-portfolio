@@ -1,52 +1,22 @@
 <template>
 <section>
-<h1 class= "titlu">{{Titlu}}</h1>
-<div class="input-div-a">
-    <input class="inputs" type="text" placeholder="username" v-model="Username">
-</div>
-<div class="input-div">
-    <input type="password" class="inputs" placeholder="password" v-model="Password">
-</div>
-<div class="button-div">
-  <router-link to="/Home" >
-    <button class="buttons">
-      <span>{{Login}}</span>
-    </button>
-  </router-link>
-</div>
-<div class="link-div">
-    <a class="link" href="">{{Forgot}}</a>
-</div>
-</section>
-    
-  <section>
-    <h1 class="titlu">{{ Titlu }}</h1>
-    <div class="input-div-a">
-      <input
-        class="inputs"
-        type="text"
-        placeholder="username"
-        v-model="Username"
-      />
-    </div>
-    <div class="input-div">
-      <input
-        class="inputs"
-        type="password"
-        placeholder="password"
-        v-model="Password"
-      />
-    </div>
-    <div class="button-div">
-      <router-link to="/Home">
-        <button class="buttons">
-          <span>{{ Login }}</span>
-        </button>
-      </router-link>
-    </div>
-    <div class="link-div">
-      <a class="link" href="">{{ Forgot }}</a>
-    </div>
+  <h1 class= "titlu">{{Titlu}}</h1>
+  <div class="input-div-a">
+      <input class="inputs" type="text" placeholder="username" v-model="Username">
+  </div>
+  <div class="input-div">
+      <input type="password" class="inputs" placeholder="password" v-model="Password">
+  </div>
+  <div class="button-div">
+    <router-link to="/Home" >
+      <button class="buttons">
+        <span>{{Login}}</span>
+      </button>
+    </router-link>
+  </div>
+  <div class="link-div">
+      <a class="link" href="">{{Forgot}}</a>
+  </div>
   </section>
 </template>
 
