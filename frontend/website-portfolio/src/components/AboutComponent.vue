@@ -76,7 +76,6 @@ export default {
     width: 40%;
     display: flex;
     align-items: flex-start;
-
     color:white;
     font-family: "Roboto", Sans-serif;
     font-size: 24px;

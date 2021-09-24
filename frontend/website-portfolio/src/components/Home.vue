@@ -2,6 +2,7 @@
 <NavbarComponent></NavbarComponent>
 <DetailsComponent></DetailsComponent>
 <AboutComponent></AboutComponent>
+<CredentialsComponent></CredentialsComponent>
 <FooterComponent></FooterComponent>
 </template>
 
@@ -10,6 +11,8 @@ import FooterComponent from './FooterComponent.vue'
 import NavbarComponent from './NavbarComponent.vue'
 import DetailsComponent from './DetailsComponent.vue'
 import AboutComponent from './AboutComponent.vue'
+import CredentialsComponent from './CredentialsComponent.vue'
+
 
 
 export default {
@@ -19,6 +22,7 @@ export default {
         FooterComponent,
         DetailsComponent,
         AboutComponent,
+        CredentialsComponent,
     }
 
 }
