@@ -2,10 +2,10 @@
     <section>
         <div class="navbar">
             <ul>
-                <li><a href="#home" class="active">George</a></li>
-                <li><a href="#home" >Leon</a></li>
-                <li><a href="#home" >Catalin</a></li>
-                <li><a href="#home" >Dragos</a></li>
+                <li><router-link to="/home"><a>George</a></router-link></li>
+                <li><router-link to="/Leon"><a>Leon</a></router-link></li>
+                <li><router-link to="/Catalin"><a>Catalin</a></router-link></li>
+                <li><router-link to="/Dragos"><a>Dragos</a></router-link></li>
 
                 <router-link to="/">
                     <li style="float:right"><a href="#contact">Sign-Out</a></li> 
