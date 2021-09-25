@@ -3,12 +3,13 @@
         <div class="footer">
             <ul class="footer-ul">
                 <pre>{{footerTitle}}</pre>
+                <pre>{{contactDetails}}</pre>
                 <li style="float:left"><a class="footer-a" href="#contact">Facebook</a></li> 
-                <li style="float:left"><a class="footer-a" href="#contact">#Instagram</a></li> 
+                <li style="float:left"><a class="footer-a" href="#contact">Instagram</a></li> 
+                <li style="float:left"><a class="footer-a" href="#news">Github</a></li>
+                <li style="float:left"><a class="footer-a" href="#news">LinkedIn</a></li>
                 <li style="float:left"><a class="footer-a" href="#news">Email</a></li>
                 <li style="float:right"><a class="footer-a©" href="#contact">2021 - Design by Team3 - Pricipan33</a></li> 
-
-            
             </ul>
          </div>
 
@@ -22,9 +23,11 @@
 export default {
     data() {
         return {
-            footerTitle: "I’m available for freelance  work, \n you can reach me by "
+            footerTitle: "You can reach me by "
         }
     },
+
+    props: ['contactDetails'], 
 }
 </script>
 
