@@ -3,12 +3,11 @@
         <div class="footer">
             <ul class="footer-ul">
                 <pre>{{footerTitle}}</pre>
-                <pre>{{contactDetails}}</pre>
-                <li style="float:left"><a class="footer-a" href="#contact">Facebook</a></li> 
-                <li style="float:left"><a class="footer-a" href="#contact">Instagram</a></li> 
-                <li style="float:left"><a class="footer-a" href="#news">Github</a></li>
-                <li style="float:left"><a class="footer-a" href="#news">LinkedIn</a></li>
-                <li style="float:left"><a class="footer-a" href="#news">Email</a></li>
+                <li style="float:left"><a class="footer-a" :href="facebookLink">Facebook</a></li> 
+                <li style="float:left"><a class="footer-a" :href="instagramLink">Instagram</a></li> 
+                <li style="float:left"><a class="footer-a" :href="linkedinLink">LinkedIn</a></li>
+                <li style="float:left"><a class="footer-a" :href="githubLink">Github</a></li>
+                <li style="float:left"><a class="footer-a" :href="emailLink">Email</a></li>
                 <li style="float:right"><a class="footer-a©" href="#contact">2021 - Design by Team3 - Pricipan33</a></li> 
             </ul>
          </div>
@@ -19,15 +18,39 @@
 
 
 <script>
- 
+ import { parseColon } from "../scripts/parse";
+
 export default {
     data() {
         return {
-            footerTitle: "You can reach me by "
+            footerTitle: "You can reach me by ",
+            facebookLink: "",
+            instagramLink: "",
+            linkedinLink: "",
+            githubLink: "",
+            emailLink: "",
         }
     },
 
     props: ['contactDetails'], 
+
+    methods: {
+        isNull(link){
+            if(link === 'null')
+                return ''
+
+            return link
+        }
+    },
+
+    mounted() {
+        const contactInfos = parseColon(this.contactDetails)
+        this.facebookLink = this.isNull(contactInfos[0])
+        this.instagramLink = this.isNull(contactInfos[1])
+        this.emailLink = "mailto:" + this.isNull(contactInfos[2])
+        this.linkedinLink = this.isNull(contactInfos[3])
+        this.githubLink = this.isNull(contactInfos[4])
+    }
 }
 </script>
 
