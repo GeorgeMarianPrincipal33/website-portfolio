@@ -2,36 +2,43 @@
     <section>
         <div>
             <h1 class="credentials-title">{{title}}</h1>
+            <h1>{{univeristy}}</h1>
+            <h1>{{universityDuration}}</h1>
+            <h1>{{universitySpecialization}}</h1>
         </div>
         <div class="credentials-div">
             <div class="credentials-div-left">
-              <ul>
-                <p class="credentials-p">{{section1}}</p>
-                <p class="credentials-p-s">{{subsection1}}</p>
-                <p class="credentials-p">{{section2}}</p>
-                <p class="credentials-p-s">{{subsection2}}</p>
-                <p class="credentials-p">{{section3}}</p>
-                <p class="credentials-p-s">{{subsection3}}</p>
-                <p class="credentials-p">{{section4}}</p>
-                <p class="credentials-p-s">{{subsection4}}</p>
-              </ul>
+                <ul >
+                    <li v-for="job in jobs" :key="job.company">
+                        <p class="credentials-p">{{job.company}}</p>
+                        <p class="credentials-p-s">{{job.duration}}</p>
+                    </li>
+                </ul>
             </div>
             <div class="credentials-div-right">
-             <ul>
-                 <p class="credentials-p">{{domain1}}</p>
-                 <br>
-                 <p class="credentials-p">{{domain2}}</p>
-                 <br>
-                 <p class="credentials-p">{{domain3}}</p>
-                 <br>
-                 <p class="credentials-p">{{domain4}}</p>
-             </ul>
+                 <ul >
+                    <li v-for="job in jobs" :key="job.company">
+                        <p class="credentials-p">{{job.position}}</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h1>Skills</h1>
+                <ul>
+                    <li v-for="skill in skillSet" :key="skill">
+                        <div>
+                            {{skill}}
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+ import { parseColon, parseComplex } from "../scripts/parse";
 
 export default {
     data() {
@@ -49,8 +56,28 @@ export default {
             domain2:"Front developer",
             domain3:"Front/ Back developer",
             domain4:"Front developer",
+
+
+            univeristy: "",
+            universityDuration: "",
+            universitySpecialization: "",
+
+            jobs: [],
+            skillSet: []
         }    
     },
+
+    props: ['certifications', 'placesOfWork', 'skills'],
+
+    mounted() {
+        const education = parseColon(this.certifications)
+        this.univeristy = education[0]
+        this.universityDuration = education[1]
+        this.universitySpecialization = education[2]
+
+        this.jobs = parseComplex(this.placesOfWork)
+        this.skillSet = parseColon(this.skills)
+    }
 }
 </script>
 

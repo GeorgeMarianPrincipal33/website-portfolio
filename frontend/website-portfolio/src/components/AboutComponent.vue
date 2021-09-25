@@ -8,15 +8,8 @@
             <p class="about-description-left">{{employee.Description}}</p>
         </div>
         <div  class="about-div-right">
-          <p>{{employee.Description2}}</p>
+          <p>{{description}}</p>
         </div>
-    </div>
-    <div>
-        <button type="submit" class="buttons-about">
-            <span>
-                <a href="https://www.linkedin.com/">Linkedin profile</a>
-            </span>
-        </button>
     </div>
 
     </section>
@@ -34,6 +27,8 @@ export default {
             },
         }
     },
+
+    props: ['description'],
 }
 </script>
 

@@ -1,23 +1,11 @@
 <template>
     <section>
       <div>
-        <pre class="details-title">{{ employee.title }}</pre>
         <img class="profile-photo" src="../assets/logo.png" name="file_name">
       </div>
-      <div>
-        <pre class="details-h2">{{ employee.details }}</pre>
-      </div>
-        <div>
-          <ul class="details-ul">
-            <li class="details-li"><a>Facebook</a></li>
-            <li class="details-li"><a>#Instagram</a></li>
-            <li class="details-li"><a>Github</a></li>
-            <li class="details-li"><a>Behance</a></li>
-          </ul>
-        </div>
         <div>
         <button type="submit" id="contact" class="buttons-home" @click="contactUs">
-            <span>Contact us</span>
+            <span>Contact</span>
         </button>
         </div>
     </section>
@@ -31,11 +19,11 @@ export default {
         return {
             employee: {
                 title: `Bring your \n brand to life \n with our \n help`,
-                icon: "",
-                details: "In your role as a professional web developer, you’re \n up for just about any website-building challenge.",                
+                icon: "",          
             }
         }        
     },
+
     methods: {
         contactUs() {
             window.scrollTo(window.scrollX, window.scrollY + 2000);            
