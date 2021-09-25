@@ -1,21 +1,22 @@
-function parseColon(value) {
-    var newString = value.split(';');
-    console.log(newString[0], newString[1], newString[2]);
+export function parseColon(value) {
+    var parsedString = value.split(';')
+    
+    return parsedString
 }
 
-parseColon("fafacebook;instagram;email;");
 
+export function parseComplex(value) {
+    var parsedString = value.split('|')
+    var details = []
 
-function parseComplex(value) {
-    var newString = value.split('|');
-    console.log(newString);
-    var details = [];
-    newString.forEach(element => {
-        var newVal = element.split(';');
-        details.push(newVal);
+    parsedString.forEach(element => {
+        const jobDetails = parseColon(element)
+        details.push({
+            company: jobDetails[0],
+            duration: jobDetails[1],
+            position: jobDetails[2],
+        })
     });
     
-    console.log(details);
+    return details
 }
-
-parseComplex("Ocado;06/2018-06/2018;Frameloading|Ocado;06/2018-06/2018;Frameloading|Ocado;06/2018-06/2018;Frameloading")
