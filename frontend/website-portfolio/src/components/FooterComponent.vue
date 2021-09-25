@@ -45,6 +45,7 @@ export default {
 
     mounted() {
         const contactInfos = parseColon(this.contactDetails)
+        
         this.facebookLink = this.isNull(contactInfos[0])
         this.instagramLink = this.isNull(contactInfos[1])
         this.emailLink = "mailto:" + this.isNull(contactInfos[2])

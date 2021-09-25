@@ -31,7 +31,7 @@ export default {
             contactDetails: '',
             certifications: '',
             placesOfWork: '',
-            skils: '',
+            skills: '',
             getData: false,
         }
     },
@@ -43,7 +43,7 @@ export default {
             this.contactDetails = result.contactDetails 
             this.certifications = result.certifications 
             this.placesOfWork = result.placesOfWork 
-            this.skils = result.skils 
+            this.skills = result.skills 
 
             console.log(result)
             this.getData = true
