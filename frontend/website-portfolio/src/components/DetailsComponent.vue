@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         contactUs() {
-            window.scrollTo(window.scrollX, window.scrollY + 500);            
+            window.scrollTo(window.scrollX, window.scrollY + 2000);            
         },
     },
 
