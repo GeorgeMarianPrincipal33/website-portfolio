@@ -8,6 +8,12 @@ export async function getCVs() {
     return axios.get(url);
 }
 
+export async function getCV(id) {
+    const url = BACKEND_URL + "/CV/GetCV" + `?id=${id}`;
+  
+    return axios.get(url);
+}
+
 export async function login(username, password){
     const url = BACKEND_URL + `/Users/LoginFunction?userName=${username}&password=${password}`;
     
