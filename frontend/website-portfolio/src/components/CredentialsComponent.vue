@@ -2,6 +2,9 @@
     <section>
         <div>
             <h1 class="credentials-title">{{title}}</h1>
+            <h1 class="credentials-title">{{certifications}}</h1>
+            <h1 class="credentials-title">{{placesOfWork}}</h1>
+            <h1 class="credentials-title">{{skills}}</h1>
         </div>
         <div class="credentials-div">
             <div class="credentials-div-left">
@@ -51,6 +54,8 @@ export default {
             domain4:"Front developer",
         }    
     },
+
+    props: ['certifications', 'placesOfWork', 'skills'],
 }
 </script>
 
