@@ -2,9 +2,9 @@
     <section>
         <div>
             <h1 class="credentials-title">{{title}}</h1>
-            <h1>{{univeristy}}</h1>
-            <h1>{{universityDuration}}</h1>
-            <h1>{{universitySpecialization}}</h1>
+            <h1 class="university">{{univeristy}}</h1>
+            <h1 class="university-duration">{{universityDuration}}</h1>
+            <h1 class="university">{{universitySpecialization}}</h1>
         </div>
         <div class="credentials-div">
             <div class="credentials-div-left">
@@ -23,11 +23,11 @@
                 </ul>
             </div>
 
-            <div>
-                <h1>Skills</h1>
+            <div style="width: 100%">
+                <h1 class="skills">Skills</h1>
                 <ul>
-                    <li v-for="skill in skillSet" :key="skill">
-                        <div>
+                    <li class="skill-array" v-for="skill in skillSet" :key="skill">
+                        <div style="width:100%">
                             {{skill}}
                         </div>
                     </li>
@@ -142,6 +142,47 @@ export default {
     color: #919396;
     margin: 7px 0px 0px 0px;
     text-align: left;
+}
+
+.university {
+    color: white;
+    font-family: "Roboto", Sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 38px;
+}
+
+.university-duration {
+    font-family: "Roboto", Sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 32px;
+    color: #919396;
+    margin: 7px 0px 0px 0px;
+}
+
+.skills {
+    color: white;
+    font-family: "Roboto", Sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 38px;
+    text-align: center;
+}
+
+.skill-array {
+    font-family: "Roboto", Sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 32px;
+    color: #919396;
+    margin: 7px 0px 0px 0px;
+    text-align: center;
+    margin-left: 20%;
 }
 
 </style>
