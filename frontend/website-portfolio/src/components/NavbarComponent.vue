@@ -2,10 +2,10 @@
     <section>
         <div class="navbar">
             <ul>
-                <li><router-link to="/home"><a>George</a></router-link></li>
-                <li><router-link to="/Leon"><a>Leon</a></router-link></li>
-                <li><router-link to="/Catalin"><a>Catalin</a></router-link></li>
-                <li><router-link to="/Dragos"><a>Dragos</a></router-link></li>
+                <li><router-link to="/home"><a class="navbar-item">George</a></router-link></li>
+                <li><router-link to="/Leon"><a class="navbar-item">Leon</a></router-link></li>
+                <li><router-link to="/Catalin"><a class="navbar-item">Catalin</a></router-link></li>
+                <li><router-link to="/Dragos"><a class="navbar-item">Dragos</a></router-link></li>
 
                 <router-link to="/">
                     <li style="float:right"><a href="#contact">Sign-Out</a></li> 
@@ -82,6 +82,14 @@ li a:hover:not(.active) {
     color: rgb(51,255,169);
 }
 
+.navbar-item {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    top: 0;
+}
 
 
 </style>
