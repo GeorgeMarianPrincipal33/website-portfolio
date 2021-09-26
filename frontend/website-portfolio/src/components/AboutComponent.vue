@@ -23,7 +23,6 @@ export default {
             Title: "About me",
             employee: {
                 Description: "I have a commercial  experience providing front-end development, producing  high quality responsive websites and  exceptional user experience.",
-                Description2: "A front-end developer’s role is to combine design and business logic to achieve a user-facing product. A wide skill set is necessary to produce a quality user experience that leads to meeting business goals.",
             },
         }
     },

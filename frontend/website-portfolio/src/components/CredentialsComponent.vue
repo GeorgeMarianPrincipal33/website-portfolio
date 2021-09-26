@@ -44,20 +44,6 @@ export default {
     data() {
         return {
             title: "Places of work/ Diplomas",
-            section1: "Apple",
-            section2: "Google",
-            section3: "Freelance",
-            section4: "Jerry.ai",
-            subsection1: "10.2017 — Present / London, UK",
-            subsection2: "11.2014 — 05.2017 / Remote & Palo Alto, CA",
-            subsection3: "04.2012 — 11.2014 / Remote, World",
-            subsection4: "08.2006 — 04.2012 / Wroclaw, Pl",
-            domain1:"Front/ Back developer",
-            domain2:"Front developer",
-            domain3:"Front/ Back developer",
-            domain4:"Front developer",
-
-
             univeristy: "",
             universityDuration: "",
             universitySpecialization: "",
