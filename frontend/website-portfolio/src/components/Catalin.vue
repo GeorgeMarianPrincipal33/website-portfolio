@@ -1,6 +1,6 @@
 <template>
 <NavbarComponent></NavbarComponent>
-<DetailsComponent></DetailsComponent>
+<DetailsComponent :person="'Catalin.jpg'"></DetailsComponent>
 <AboutComponent v-if="getData" :description="description"></AboutComponent>
 <CredentialsComponent v-if="getData" :certifications="certifications" :placesOfWork="placesOfWork" :skills="skills"></CredentialsComponent>
 <FooterComponent v-if="getData" :contactDetails="contactDetails"></FooterComponent>
@@ -45,7 +45,6 @@ export default {
             this.placesOfWork = result.placesOfWork 
             this.skills = result.skills 
 
-            console.log(result)
             this.getData = true
         })
     }

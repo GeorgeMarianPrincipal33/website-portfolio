@@ -1,7 +1,7 @@
 <template>
     <section>
       <div>
-        <img class="profile-photo" src="../assets/logo.png" name="file_name">
+        <img class="profile-photo" :src="this.getImage()" name="file_name">
       </div>
         <div>
         <button type="submit" id="contact" class="buttons-home" @click="contactUs">
@@ -18,16 +18,23 @@ export default {
     data() {
         return {
             employee: {
-                title: `Bring your \n brand to life \n with our \n help`,
                 icon: "",          
             }
         }        
+    },
+
+    props: {
+      person: String
     },
 
     methods: {
         contactUs() {
             window.scrollTo(window.scrollX, window.scrollY + 2000);            
         },
+
+        getImage(){
+          return require('@/assets/' + this.person)
+        }
     },
 
 }
@@ -46,6 +53,10 @@ export default {
 }
 
 .profile-photo {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 
