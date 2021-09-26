@@ -10,8 +10,8 @@
                 <router-link to="/">
                     <li style="float:right"><a href="#contact">Sign-Out</a></li> 
                 </router-link>
-                <li style="float:right"><a href="#news">Work</a></li>
-                <li style="float:right"><a href="#about">About</a></li>
+                <li style="float:right"><a href="#news" @click="work">Work</a></li>
+                <li style="float:right"><a href="#about" @click="aboutUs">About</a></li>
                 <li style="float:right"><a class="active" href="#home">Home</a></li>
             </ul>
          </div>
@@ -26,6 +26,14 @@ export default {
         return {
             navbarName: "George",
         }
+    },
+    methods: {
+        aboutUs() {
+            window.scrollTo(window.scrollX, window.scrollY + 100);            
+        },
+        work() {
+            window.scrollTo(window.scrollX, window.scrollY + 850);            
+        },
     }
 }
 </script>
